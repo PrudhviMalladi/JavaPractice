@@ -1,16 +1,19 @@
-import java.util.Arrays;
+import java.awt.datatransfer.StringSelection;
+import java.util.*;
 
 public class StreamApi {
     public static void main(String[] args) {
-        int[] nums ={5,68,9,8,};
-        Arrays.stream(nums).sorted();
-        System.out.println(Arrays.toString(nums));
+        List<String> values = new ArrayList<>();
+        values.add("apple");
+        values.add("banana");
+        values.add("custard apple");
+        values.add("pine apple");
+        Optional<String> longestString= values
+                .stream()
+                .max(Comparator.comparingInt(String::length));
+        System.out.println(longestString);
+
 
     }
-
-
-
-
-
 }
 
